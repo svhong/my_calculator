@@ -14,12 +14,12 @@ header {
 /*THE CALCULATOR*/
 #theCalc {
     display: inline-block;
-    position: absolute;
+    position: relative;
     background-color: hotpink;
     color: white;
     height: 500px;
     width: 450px;
-    top: 20vh;
+    top: 10vh;
     left: 50%;
     transform: translate(-50%);
     box-shadow: 0 0 30px 5px white;
@@ -27,7 +27,7 @@ header {
 /*INPUT/DISPLAY AREA*/
 .inputArea {
     background-color: lightpink;
-    font-size: 5vh;
+    font-size: 3em;
     color: deeppink;
     margin: 0;
     position: absolute;
