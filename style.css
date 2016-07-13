@@ -1,0 +1,120 @@
+body {
+    position: relative;
+    background-color: deeppink;
+}
+
+header {
+    text-align: center;
+    height: 10vh;
+    font-size: 7vh;
+    background-color: hotpink;
+    color: deeppink;
+    text-shadow: 0 0 8px white;
+}
+/*THE CALCULATOR*/
+#theCalc {
+    display: inline-block;
+    position: relative;
+    background-color: hotpink;
+    color: white;
+    height: 500px;
+    width: 450px;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0 0 30px 5px white;
+}
+/*INPUT/DISPLAY AREA*/
+.inputArea {
+    background-color: lightpink;
+    font-size: 3em;
+    color: deeppink;
+    margin: 0;
+    position: absolute;
+    height: 16%;
+    width:80%;
+    left: 10%;
+    top: 10%;
+    border: 0;
+    box-shadow: 5px 5px 3px deeppink;
+}
+/*OPERATOR CONTAINER*/
+.opContainer {
+    top: 28%;
+    position: absolute;
+    margin: 0;
+    height: 15%;
+    width: 100%;
+}
+.opButton {
+    display: inline-block;
+    height: 83%;
+    width: 17%;
+    position:relative;
+    left: 16%;
+    top: 12%;
+}
+/*NUMBER CONTAINER*/
+.numContainer {
+    width: 54%;
+    height: 59%;
+    position: absolute;
+    display: inline-block;
+    bottom: 1%;
+    left: 15%;
+}
+.numButton {
+    position: relative;
+    display: inline-block;
+    width: 29%;
+    height: 21%;
+    top: 4%;
+    margin:3px;
+}
+/*CLEAR CONTAINER*/
+.clearContainer {
+    display: inline-block;
+    position: absolute;
+    height: 59%;
+    width: 15%;
+    right: 15%;
+    bottom: 1%;
+}
+.clearButton {
+    height: 45%;
+    width: 100%;
+}
+
+
+/*BUTTONS*/
+.theOps {
+    border: 0;
+    font-family: Arial;
+    color: deeppink;
+    height: 94%;
+    width: 87%;
+    font-size: 2em;
+    background-color: lightpink;
+    box-shadow: 5px 5px 3px deeppink;
+}
+.theNums {
+    border: 0;
+    display: inline-block;
+    background-color: lightpink;
+    height: 100%;
+    width: 100%;
+    font-size: 2em;
+    color: deeppink;
+    box-shadow: 5px 5px 3px deeppink;
+}
+.theClear {
+    border: 0;
+    position: relative;
+    top: 13%;
+    width: 95%;
+    height: 96%;
+    font-size: 2em;
+    background-color: lightpink;
+    color: deeppink;
+    box-shadow: 5px 5px 3px deeppink;
+}
