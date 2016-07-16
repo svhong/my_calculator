@@ -9,35 +9,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="http://Learning-Fuze.github.io/calculator/calculator.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
     <header>Pinkulator</header>
     <div id="theCalc">
-        <input type="text" class="inputArea" data-input="results" placeholder="Pink Panther">
-        <div class="opContainer">
-            <div class="opButton"><button type="button" class="theOps">&#43</button></div>
-            <div class="opButton"><button type="button" class="theOps">&#45</button></div>
-            <div class="opButton"><button type="button" class="theOps">&#42</button></div>
-            <div class="opButton"><button type="button" class="theOps">&#47</button></div>
-        </div>
-        <div class="numContainer">
-            <div class="numButton"><button type="button" class="theNums">7</button></div>
-            <div class="numButton"><button type="button" class="theNums">8</button></div>
-            <div class="numButton"><button type="button" class="theNums">9</button></div>
-            <div class="numButton"><button type="button" class="theNums">4</button></div>
-            <div class="numButton"><button type="button" class="theNums">5</button></div>
-            <div class="numButton"><button type="button" class="theNums">6</button></div>
-            <div class="numButton"><button type="button" class="theNums">1</button></div>
-            <div class="numButton"><button type="button" class="theNums">2</button></div>
-            <div class="numButton"><button type="button" class="theNums">3</button></div>
-            <div class="numButton"><button type="button" class="theNums">.</button></div>
-            <div class="numButton"><button type="button" class="theNums">0</button></div>
-            <div class="numButton"><button type="button" class="theNums">=</button></div>
-        </div>
-        <div class="clearContainer">
-            <div class="clearButton"><button type="button" class="theClear" data-clear="clear">C</button></div>
-            <div class="clearButton"><button type="button" class="theClear" data-clear="clear everything">CE</button></div>
+        <div id="theInput" class="inputArea" data-input="results"></div>
+        <div class="keysContainer">
+            <div class="opContainer">
+                <div class="opButton"><button type="button" class="theOps">+</button></div>
+                <div class="opButton"><button type="button" class="theOps">-</button></div>
+                <div class="opButton"><button type="button" class="theOps">*</button></div>
+                <div class="opButton"><button type="button" class="theOps">/</button></div>
+            </div>
+            <div class="numContainer">
+                <div class="numButton"><button type="button" class="theNums">7</button></div>
+                <div class="numButton"><button type="button" class="theNums">8</button></div>
+                <div class="numButton"><button type="button" class="theNums">9</button></div>
+                <div class="numButton"><button type="button" class="theNums">4</button></div>
+                <div class="numButton"><button type="button" class="theNums">5</button></div>
+                <div class="numButton"><button type="button" class="theNums">6</button></div>
+                <div class="numButton"><button type="button" class="theNums">1</button></div>
+                <div class="numButton"><button type="button" class="theNums">2</button></div>
+                <div class="numButton"><button type="button" class="theNums">3</button></div>
+                <div id="theDot"class="numButton"><button type="button" class="theNums">.</button></div>
+                <div class="numButton"><button type="button" class="theNums">0</button></div>
+                <div id="theEquals" class="numButton"><button type="button" class="theNums">=</button></div>
+            </div>
+            <div class="clearContainer">
+                <div class="clearButton"><button type="button" class="theClear" data-clear="clear">CE</button></div>
+                <div class="clearButton"><button type="button" class="theClear" data-clear="clear everything">AC</button></div>
+            </div>
         </div>
     </div>
 </body>
