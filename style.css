@@ -118,3 +118,23 @@ header {
     color: deeppink;
     box-shadow: 5px 5px 3px deeppink;
 }
+.pinkpanther {
+    transform: scaleX(-1);
+    display: inline-block;
+    position: absolute;
+    left:72%;
+    top:64%;
+}
+.inspector img{
+    display: inline-block;
+    position: absolute;
+    width: 20%;
+    height: 25%;
+    top: 58%;
+}
+
+.pawprint img{
+    display: inline-block;
+    width: 20%;
+    height: 20%;
+}
