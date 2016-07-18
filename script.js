@@ -62,6 +62,8 @@ function op_clicked(theOps){ // op_clicked function will run when the operator k
     console.log(array_input); //************ console logging for optimization
 }
 
+// ------------- LFZ Start
+
 function clear_clicked(clear){ //clear clicked funtion to run when the clear keypad is pressed
     if(array_position==0 && array_input[array_position] == ''){ //conditional to check if the array position is at 0 and an empty string is true
         console.log('Nothing to clear');//************** console logging for optimization
@@ -93,6 +95,8 @@ function clear_clicked(clear){ //clear clicked funtion to run when the clear key
             break; // exit out of the switch statement
     }
 }
+
+// ---------------- LFZ End
 
 function show_input(){ // function to show the input on the display area
     // $('#theInput').text(array_input.join(''));
