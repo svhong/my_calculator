@@ -2,7 +2,7 @@
 var array_input = [''];
 var array_position = 0;
 var storage = {}; //will be an object that stores the previously used numbers and operators
-// var oneOp = {
+var add_decimal = false;
 //     '+': function(a,b) {return a + b},
 //     '-': function(a,b) {return a - b},
 //     '*': function(a,b) {return a * b},
@@ -29,7 +29,9 @@ function click_handlers() {
         clear_clicked($(this).text()); // changes the text node when the clear button key pad is clicked
         
     });
+
 }
+
 
 function number_clicked(theValue){ // function to run when the number key pad is clicked
     switch (theValue){ //switch statement evaluates the value of the number key pad that is clicked
@@ -40,27 +42,36 @@ function number_clicked(theValue){ // function to run when the number key pad is
                 return; // exits the function after running
             }
             break; //exits out of the switch statement
-    //     case '.':
-    //         if (theValue == '.'){/*DISABLES THE DECIMAL BUTTON WHEN CLICKED*/
-    //             console.log('the decimal was clicked, doing nothing');
-    //             return;
-    //         }
-    //         break;
+        case '.':
+            if (theValue == '.' && !add_decimal){
+                add_decimal = true;
+                show_input();
+            }  else if (add_decimal = true) {
+                console.log('can no longer add .');
+                return;
+            }
+            break;
     }
     array_input[array_position] += theValue; // if the number keypad is pressed and is not = or . then run these lines
     show_input(); // show input function changes the text node that corresponds to the number key pressed
     console.log(array_input); //******** console logging for optimization
 }
 
-function op_clicked(theOps){ // op_clicked function will run when the operator key pad is clicked
+function op_clicked(theOps){// op_clicked function will run when the operator key pad is clicked
+    if (array_input[array_position] == '' && theOps){
+        console.log('pressing an operator and it will not go in array');
+        return;
+    }
     array_position++; // increments the position of the array to the next position
     array_input[array_position] = ''; // used to concatenate the operator into a new string
     array_input[array_position] += theOps; //inputing the operator value pressed into the new string created above
     show_input(); // function to display the operator that was clicked
     array_position++; // increment the array position for new number key to be pressed
     array_input[array_position] = ''; // fill that new position with empty string to concatenate the next value to be pressed
+    add_decimal = false;
     console.log(array_input); //************ console logging for optimization
 }
+
 
 // ------------- LFZ Start
 
@@ -71,6 +82,9 @@ function clear_clicked(clear){ //clear clicked funtion to run when the clear key
     }
     switch(clear){ // switch statement to evaluate if the parameter pressed was the clear key pad
         case 'CE': // case statement to check if the clear button pressed is CE
+            if (add_decimal == true){
+                add_decimal = false;
+            }
             if (array_input[array_position] == '') { // if the value of the key clicked is CE then check if the array input position contains empty string
                 array_input.splice(array_input.length-2,2); // if above condition is true, cut the array starting from position, to ending position
                 if(array_position>=2){ /*ADDED TO PREVENT THE ARRAY GOING NEGATIVE VALUE*/
@@ -80,10 +94,10 @@ function clear_clicked(clear){ //clear clicked funtion to run when the clear key
                 }
                 console.log("getting rid of operator: ",array_input); //**************console logging for optimization purposes
 
-            }
-            else{ // if the CE condition above is not true then,
+            } else { // if the CE condition above is not true then,
                 var num = array_input[array_position]; // assigning the value at the position of the array into variable num
                 num = num.slice(0,num.length-1); // slice the last piece of the string and return the value back to the array input at the current position
+                array_input[array_position] = num;
                 show_input(); // show the result on the display
                 console.log('getting rid of numbers', array_input); //******************console logging for optimization
             }
@@ -91,6 +105,7 @@ function clear_clicked(clear){ //clear clicked funtion to run when the clear key
         case 'AC': // if the clear button pressed has the value of AC, then...
             array_input=['']; //set the input array back to empty string
             array_position=0; // set the position of the array back to 0
+            add_decimal = false;
             show_input(); // display the number
             break; // exit out of the switch statement
     }
@@ -135,7 +150,16 @@ function calculate_equation(show_result){ // calculate equation function made to
     }
     var result = do_maths(params.num1, params.num2, params.ops); // the result of the function do maths with the parameters gets assigned to result
     storage = params; // previous params gets assigned to storage after use
-    update_array_with_answer(result); // update the array with the answer result
+    if (result%2 == 0){
+        update_array_with_answer(result);
+        show_input();
+        return;
+    } else if (result.lastIndexOf(0) == 1) {
+        update_array_with_answer(result.toFixed(1));
+    } else {
+        update_array_with_answer(result.toFixed(2));
+    }
+     // update the array with the answer result
     if(show_result){ // if show result is set to true
         show_input();//then display the input on screen
     }
