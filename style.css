@@ -37,6 +37,7 @@ header {
     top: 10%;
     border: 0;
     box-shadow: 5px 5px 3px deeppink;
+    overflow: hidden;
 }
 /*OPERATOR CONTAINER*/
 .opContainer {

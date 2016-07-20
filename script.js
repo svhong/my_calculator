@@ -132,14 +132,12 @@ function calculate_equation(show_result){ // calculate equation function made to
     if (array_input.length == 3 && array_input[array_position]!='') { // conditional to check if the length of array is 3 AND the last position of the array is NOT an empty string, then
         params = get_params_from_array(); //assign the result of the function get params from array to variable params
 
-    }
-    else if(array_input.length==1 && storage.ops != undefined && storage.num2 != undefined){ // conditional to check if the array has 1 or more AND operator storage is undefined (empty string)
+    } else if(array_input.length==1 && storage.ops != undefined && storage.num2 != undefined){ // conditional to check if the array has 1 or more AND operator storage is undefined (empty string)
         // AND the number2 in storage is also undefined is true, then
         array_input[1] = storage.ops; // assign storage ops into array at position 1
         array_input[2] = storage.num2; // assign storage number 2 into array at position 2
         params = get_params_from_array(); // params gets assigned the result from the function of get params from array
-    }
-    else if(array_input.length==3 && array_input[array_position]==''){ // conditional to check if the length of the array is 3 AND current position in array is an empty string
+    } else if(array_input.length==3 && array_input[array_position]==''){ // conditional to check if the length of the array is 3 AND current position in array is an empty string
         // condition statement checking when user inputs '2 + ='
         if(storage.num2 != undefined) { // if the number 2 in storage is NOT undefined, then
             array_input[2] = storage.num2; // the number 2 in storage gets assigned to the array in the 2 position
@@ -147,18 +145,17 @@ function calculate_equation(show_result){ // calculate equation function made to
             array_input[2] = array_input[0]; // the array in position 0 gets assigned to the array in the 0 position
         }
         params = get_params_from_array(); // if the above else if statement is true, then the result of get params function is assigned to params
+    } else if (array_input[0] == ''){
+        return;
     }
     var result = do_maths(params.num1, params.num2, params.ops); // the result of the function do maths with the parameters gets assigned to result
     storage = params; // previous params gets assigned to storage after use
-    if (result%2 == 0){
+    if (result%2 == 0) {
         update_array_with_answer(result);
         show_input();
         return;
-    } else if (result.lastIndexOf(0) == 1) {
-        update_array_with_answer(result.toFixed(1));
-    } else {
-        update_array_with_answer(result.toFixed(2));
     }
+        update_array_with_answer(result);
      // update the array with the answer result
     if(show_result){ // if show result is set to true
         show_input();//then display the input on screen
