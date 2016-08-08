@@ -129,6 +129,13 @@ function calculate_equation(show_result){ // calculate equation function made to
     if(show_result==undefined){ // conditional statement to check if show_result parameter is undefined, then
         show_result = true; //assign the parameter value to true
     }
+    if(array_input.length == 3 && array_input[0] == 1 && array_input[1] == '/' && array_input[2] == 0){
+        array_input=['']; //set the input array back to empty string
+        array_position=0; // set the position of the array back to 0
+        add_decimal = false;
+        $('#theInput').text('ERROR!');
+        return;
+    }
     if (array_input.length == 3 && array_input[array_position]!='') { // conditional to check if the length of array is 3 AND the last position of the array is NOT an empty string, then
         params = get_params_from_array(); //assign the result of the function get params from array to variable params
 
