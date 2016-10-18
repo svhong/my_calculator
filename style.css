@@ -38,6 +38,7 @@ header {
     border: 0;
     box-shadow: 5px 5px 3px deeppink;
     overflow: hidden;
+    text-align: right;
 }
 /*OPERATOR CONTAINER*/
 .opContainer {
