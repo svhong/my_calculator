@@ -1,6 +1,7 @@
 body {
     position: relative;
     background-color: deeppink;
+    overflow: hidden;
 }
 
 header {
@@ -17,9 +18,9 @@ header {
     position: relative;
     background-color: hotpink;
     color: white;
-    height: 500px;
-    width: 450px;
-    top: 10vh;
+    height: 470px;
+    width: 370px;
+    top: 5vh;
     left: 50%;
     transform: translate(-50%);
     box-shadow: 0 0 30px 5px white;
@@ -120,23 +121,36 @@ header {
     color: deeppink;
     box-shadow: 5px 5px 3px deeppink;
 }
-.pinkpanther {
+.panther{
+    background: url("images/pinkpanther.png") no-repeat;
+    background-size: contain;
+    height: 39vh;
+    width: 46vh;
+    position: relative;
+    display: inline-block;
+    top: 38vh;
     transform: scaleX(-1);
-    display: inline-block;
-    position: absolute;
-    left:72%;
-    top:64%;
+    left: 60vh;
+
 }
-.inspector img{
+.inspector{
+    background: url("images/inspector.png") no-repeat;
+    background-size: contain;
+    height: 39vh;
+    width: 46vh;
     display: inline-block;
-    position: absolute;
-    width: 20%;
-    height: 25%;
-    top: 58%;
+    position: relative;
+    top: 4vh;
+    right: 40vh;
 }
 
-.pawprint img{
+.paw{
+    background: url("images/paw.png") no-repeat;
+    background-size: contain;
+    height: 9vh;
+    width: 8vh;
     display: inline-block;
-    width: 20%;
-    height: 20%;
+    position: relative;
+    bottom: 5vh;
+    right: 46vh;
 }
