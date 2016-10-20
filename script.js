@@ -53,6 +53,10 @@ function number_clicked(theValue){ // function to run when the number key pad is
             break;
     }
     array_input[array_position] += theValue; // if the number keypad is pressed and is not = or . then run these lines
+    if (array_input.length == 3) {
+        calculate_equation();
+        return;
+    }
     show_input(); // show input function changes the text node that corresponds to the number key pressed
     console.log(array_input); //******** console logging for optimization
 }
@@ -126,7 +130,7 @@ function show_input(){ // function to show the input on the display area
 function calculate_equation(show_result){ // calculate equation function made to calculate the equation of the parameters that was clicked
     //the parameter show_result above will be undefined
     var params; // declaring params as an undefined variable
-    if(show_result==undefined){ // conditional statement to check if show_result parameter is undefined, then
+    if(show_result == undefined){ // conditional statement to check if show_result parameter is undefined, then
         show_result = true; //assign the parameter value to true
     }
     if(array_input.length == 3 && array_input[0] == 1 && array_input[1] == '/' && array_input[2] == 0){
