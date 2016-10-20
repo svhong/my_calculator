@@ -124,8 +124,8 @@ header {
 .panther{
     background: url("images/pinkpanther.png") no-repeat;
     background-size: contain;
-    height: 39vh;
-    width: 46vh;
+    height: 230px;
+    width: 270px;
     position: relative;
     display: inline-block;
     transform: scaleX(-1);
@@ -136,8 +136,8 @@ header {
 .inspector{
     background: url("images/inspector.png") no-repeat;
     background-size: contain;
-    height: 39vh;
-    width: 46vh;
+    height: 250px;
+    width: 300px;
     display: inline-block;
     position: relative;
     top: 30px;
@@ -147,10 +147,10 @@ header {
 .paw{
     background: url("images/paw.png") no-repeat;
     background-size: contain;
-    height: 9vh;
-    width: 8vh;
+    height: 50px;
+    width: 50px;
     display: inline-block;
     position: relative;
     bottom: 35px;
-    right: 295px;
+    right: 298px;
 }
