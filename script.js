@@ -53,10 +53,6 @@ function number_clicked(theValue){ // function to run when the number key pad is
             break;
     }
     array_input[array_position] += theValue; // if the number keypad is pressed and is not = or . then run these lines
-    if (array_input.length == 3) {
-        calculate_equation();
-        return;
-    }
     show_input(); // show input function changes the text node that corresponds to the number key pressed
     console.log(array_input); //******** console logging for optimization
 }
@@ -66,10 +62,14 @@ function op_clicked(theOps){// op_clicked function will run when the operator ke
         console.log('pressing an operator and it will not go in array');
         return;
     }
+    if (array_input.length == 3){
+        calculate_equation();
+        show_input();
+    }
     array_position++; // increments the position of the array to the next position
     array_input[array_position] = ''; // used to concatenate the operator into a new string
     array_input[array_position] += theOps; //inputing the operator value pressed into the new string created above
-    show_input(); // function to display the operator that was clicked
+    // show_input(); // function to display the operator that was clicked
     array_position++; // increment the array position for new number key to be pressed
     array_input[array_position] = ''; // fill that new position with empty string to concatenate the next value to be pressed
     add_decimal = false;

@@ -45,7 +45,7 @@ header {
 .opContainer {
     top: 28%;
     position: absolute;
-    margin: 0;
+    right: 3%;
     height: 15%;
     width: 100%;
 }
@@ -59,12 +59,12 @@ header {
 }
 /*NUMBER CONTAINER*/
 .numContainer {
-    width: 54%;
+    width: 56%;
     height: 59%;
     position: absolute;
     display: inline-block;
     bottom: 1%;
-    left: 15%;
+    left: 12%;
 }
 .numButton {
     position: relative;
@@ -95,7 +95,7 @@ header {
     font-family: Arial;
     color: deeppink;
     height: 94%;
-    width: 87%;
+    width: 95%;
     font-size: 2em;
     background-color: lightpink;
     box-shadow: 5px 5px 3px deeppink;
